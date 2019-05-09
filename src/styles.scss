@@ -1,7 +1,24 @@
 $main-color: #f58220;
+$bg-color: #f9f9f9;
+
+@font-face {
+    font-family: lato-regular;
+    src: url(assets/fonts/Lato-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: lato-regular-italic;
+    src: url(assets/fonts/Lato-Italic.ttf) format("truetype");
+}
+
+body {
+    font-family: 'space-mono-bold';
+}
 
 body {
     padding-top: 56px;
+    background-color: $bg-color;
+    font-family: 'lato-regular';
 }
 
 .bg-dark {
