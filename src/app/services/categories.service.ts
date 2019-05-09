@@ -11,15 +11,19 @@ import { Observable } from 'rxjs';
 })
 export class CategoriesService {
 
+  endpoint: string;
+
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.endpoint = `${environment.url}/categories`;
+  }
 
   getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${environment.url}/categories`);
+    return this.http.get<Category[]>(this.endpoint);
   }
 
   getCategoryProducts(categoryId: number): Observable<Product[]> {
-    return this.http.get<Product[]>(`${environment.url}/categories/${categoryId}/products`);
+    return this.http.get<Product[]>(`${this.endpoint}/${categoryId}/products`);
   }
 }
