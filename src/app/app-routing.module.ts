@@ -7,8 +7,8 @@ const routes: Routes = [
     loadChildren: './modules/home/home.module#HomeModule'
   },
   {
-    path: 'department',
-    loadChildren: './modules/department/department.module#DepartmentModule'
+    path: 'category',
+    loadChildren: './modules/category/category.module#CategoryModule'
   },
   {
     path: 'cart',
