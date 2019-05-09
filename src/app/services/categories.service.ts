@@ -23,6 +23,10 @@ export class CategoriesService {
     return this.http.get<Category[]>(this.endpoint);
   }
 
+  getCategory(categoryId): Observable<Category> {
+    return this.http.get<Category>(`${this.endpoint}/${categoryId}`);
+  }
+
   getCategoryProducts(categoryId: number): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.endpoint}/${categoryId}/products`);
   }

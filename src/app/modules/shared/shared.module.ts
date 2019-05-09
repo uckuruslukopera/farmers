@@ -5,13 +5,16 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { ProductCardListComponent } from './product-card-list/product-card-list.component';
 
 @NgModule({
   declarations: [
     SideBarComponent,
     CarouselComponent,
     ProductCardComponent,
-    MenuComponent
+    MenuComponent,
+    ProductCardListComponent
+    
   ],
   imports: [
     CommonModule,
@@ -21,7 +24,8 @@ import { RouterModule } from '@angular/router';
     SideBarComponent,
     CarouselComponent,
     ProductCardComponent,
-    MenuComponent
+    MenuComponent,
+    ProductCardListComponent
   ]
 })
 export class SharedModule { }
