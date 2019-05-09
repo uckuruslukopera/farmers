@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-lg-3">
+    <app-side-bar title="Sepetim" [withMenu]="false"></app-side-bar>
+  </div>  
+  <div class="col-lg-9">
+    <div class="container">
+      <br>
+      <div class="card">
+        <table class="table shopping-cart-wrap table-responsive-sm">
+          <thead class="text-muted">
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col" width="120">Quantity</th>
+              <th scope="col" width="120">Price</th>
+              <th scope="col" width="200" class="text-right"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <figure class="media">
+                  <div class="img-wrap">
+                    <img src="http://bootstrap-ecommerce.com/main/images/items/2.jpg" class="img-thumbnail img-sm"></div>
+                  <figcaption class="media-body">
+                    <h6 class="title text-truncate">Product name goes here </h6>
+                    <!-- <dl class="param param-inline small">
+                      <dt>Size: </dt>
+                      <dd>XXL</dd>
+                    </dl>
+                    <dl class="param param-inline small">
+                      <dt>Color: </dt>
+                      <dd>Orange color</dd>
+                    </dl> -->
+                  </figcaption>
+                </figure>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </td>
+              <td>
+                <div class="price-wrap">
+                  <var class="price">USD 145</var>
+                  <small class="text-muted">(USD5 each)</small>
+                </div>
+              </td>
+              <td class="text-right">
+                <a href="" class="btn btn-outline-danger">Sil</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="card-footer text-right">
+          <p>Genel Toplam: <span>100 TL</span> </p>
+          <a href="" class="btn btn-outline-danger">Alışverişi Tamamla</a>
+        </div>
+      </div>
+      <br/>
+    </div>
+  </div>
+</div>
+
