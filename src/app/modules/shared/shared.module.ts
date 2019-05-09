@@ -4,6 +4,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { MenuComponent } from './menu/menu.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MenuComponent } from './menu/menu.component';
     MenuComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],  
   exports: [
     SideBarComponent,

@@ -4,15 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: './home/home.module#HomeModule'
+    loadChildren: './modules/home/home.module#HomeModule'
   },
   {
     path: 'department',
-    loadChildren: './department/department.module#DepartmentModule'
+    loadChildren: './modules/department/department.module#DepartmentModule'
   },
   {
     path: 'cart',
-    loadChildren: './cart/cart.module#CartModule'
+    loadChildren: './modules/cart/cart.module#CartModule'
   },
   {
     path: '',
