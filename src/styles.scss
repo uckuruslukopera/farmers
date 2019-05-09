@@ -11,8 +11,18 @@ $bg-color: #f9f9f9;
     src: url(assets/fonts/Lato-Italic.ttf) format("truetype");
 }
 
+@font-face {
+    font-family: nunito-regular;
+    src: url(assets/fonts/NunitoSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: nunito-regular-italic;
+    src: url(assets/fonts/NunitoSans-Italic.ttf) format("truetype");
+}
+
 body {
-    font-family: 'space-mono-bold';
+    font-family: 'nunito-regular';
 }
 
 body {
