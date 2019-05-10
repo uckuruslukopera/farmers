@@ -5,12 +5,12 @@
   <div class="col-lg-9">
     <div class="container">
       <br>
-      <div class="card">
+      <div *ngIf="(cartItemsQty$ | async) > 0; else noData" class="card">
           <table class="table table-borderless table-responsive-sm">
             <thead>
               <tr>
                 <th scope="col">Ürün</th>
-                <th scope="col" >Ürün Sayısı</th>
+                <th scope="col">Ürün Sayısı</th>
                 <th scope="col">Birim Fiyat</th>
                 <th scope="col">Ürün Toplamı</th>
                 <th scope="col" class="text-right"></th>
@@ -28,21 +28,29 @@
                   </figure>
                   </td>
                 <td>
-                  <app-number-stepper [value]="cartItem.qty" (onValueChanged)="updateItemQty($event, cartItem.product)"></app-number-stepper>
+                  <app-number-stepper [value]="cartItem.qty"
+                                      (onValueChanged)="updateItemQty($event, cartItem.product )"></app-number-stepper>
                 </td>
                 <td>{{cartItem.product?.price | number:'1.2-2'}} TL</td>
                 <td>{{cartItem.rowTotal  | number:'1.2-2'}} TL</td>
                 <td class="text-right">
-                  <a href="javascrip:void(0)" (click)="removeFromCart($event, product)" class="btn btn-outline-danger">Sil</a>
+                  <a href="javascrip:void(0)" (click)="removeFromCart($event, cartItem.product)" class="btn btn-outline-danger">Sil</a>
                 </td>
               </tr>
             </tbody>
           </table>
         <div class="card-footer text-right">
           <p><b>Genel Toplam: </b> <span>{{(cartTotal$ | async) | number:'1.2-2'}} TL</span> </p>
-          <a href="javascrip:void(0)" (click)="emptyCart($event)" class="btn btn-outline-danger">Sepeti Boşalt</a>
+          <a href="javascrip:void(0)" (click)="emptyCart($event)" class="btn btn-outline-danger">Sepeti Temizle</a>
         </div>
       </div>
+      <ng-template #noData>
+        <div class="cart__no-data">
+            <i class="fa fa-flag"></i>
+            <p>Sepetinizde ürün bulunmuyor.</p>
+            <a href="javascrip:void(0)" routerLink="/home" class="btn btn-outline-success">Alışverişe Başla</a>
+        </div>
+      </ng-template>
       <br/>
     </div>
   </div>

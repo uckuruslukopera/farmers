@@ -4,6 +4,7 @@ import { State } from 'src/app/models/state.interface';
 import { Observable } from 'rxjs';
 import { CartItem } from 'src/app/models/cart-item.interface';
 import * as fromRoot from './../../../state/reducers/index'
+import { RemoveFromCartAction, EmptyCartAction, UpdateItemQtyAction } from 'src/app/state/actions/cart.action';
 
 @Component({
   selector: 'app-cart',
@@ -14,28 +15,30 @@ export class CartComponent implements OnInit {
 
   cartItems$: Observable<CartItem[]>;
   cartTotal$: Observable<number>;
+  cartItemsQty$: Observable<number>;
 
   constructor(
     private store: Store<State>
   ) {
     this.cartItems$ = store.select(fromRoot.getCartItems);
     this.cartTotal$ = store.select(fromRoot.getCartTotal);
+    this.cartItemsQty$ = store.select(fromRoot.getCartItemsQty);
   }
 
   ngOnInit() {
     
   }
 
-  updateItemQty(e, product) {
-
+  removeFromCart(e, product) {
+    this.store.dispatch(new RemoveFromCartAction(product));
   }
 
-  removeFromCart(e, product) {
-
+  updateItemQty(e, product) {
+    this.store.dispatch(new UpdateItemQtyAction({product: product, qty: e}));
   }
 
   emptyCart(e) {
-    
+    this.store.dispatch(new EmptyCartAction());
   }
 
 }
