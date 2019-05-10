@@ -1,10 +1,8 @@
 import * as fromCart from "./cart.reducer";
-import { CartState } from 'src/app/models/cart-state.interface';
-
-interface State {
-    cart: CartState
-}
+import { State } from 'src/app/models/state.interface';
 
 export const reducers = {
     cart: fromCart.reducer
 }
+
+export const getCartItemsQty = (state: State) => state.cart.itemsQty;
