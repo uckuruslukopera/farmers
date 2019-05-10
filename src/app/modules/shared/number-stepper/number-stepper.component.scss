@@ -1,0 +1,38 @@
+.number-stepper { 
+    overflow: hidden;
+    &--minus {
+        float: left;
+        text-align: center;
+    }
+    &--plus {
+        float: left;
+        text-align: center;
+    }
+    input {
+        float: left;
+        text-align: center;
+        width: 50px;
+        border-width: 1px;
+        border-left: none;
+        border-right: none;
+        padding: 6px 12px;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.btn {
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  color: #fff;
+  &.disabled,
+  &.disabled:hover {
+    cursor: not-allowed;
+  }
+}
+
+
+// .btn-primary { background-color: #009dda; }
+
+// .btn-primary:hover, .btn-primary:focus { background-color: #0486b9; }

@@ -6,6 +6,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { ProductCardListComponent } from './product-card-list/product-card-list.component';
+import { NumberStepperComponent } from './number-stepper/number-stepper.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ProductCardListComponent } from './product-card-list/product-card-list.
     CarouselComponent,
     ProductCardComponent,
     MenuComponent,
-    ProductCardListComponent
+    ProductCardListComponent,    
+    NumberStepperComponent
     
   ],
   imports: [
@@ -25,7 +27,8 @@ import { ProductCardListComponent } from './product-card-list/product-card-list.
     CarouselComponent,
     ProductCardComponent,
     MenuComponent,
-    ProductCardListComponent
+    ProductCardListComponent,
+    NumberStepperComponent
   ]
 })
 export class SharedModule { }

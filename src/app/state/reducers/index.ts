@@ -6,3 +6,5 @@ export const reducers = {
 }
 
 export const getCartItemsQty = (state: State) => state.cart.itemsQty;
+export const getCartItems = (state: State) => state.cart.cartItems;
+export const getCartTotal = (state: State) => state.cart.total;
