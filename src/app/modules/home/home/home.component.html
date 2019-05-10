@@ -4,31 +4,9 @@
   </div>  
   <div class="col-lg-9">
     <div class="container">
-        <app-carousel></app-carousel>
+        <app-carousel [media]="promotions"></app-carousel>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <app-product-card></app-product-card>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <app-product-card></app-product-card>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <app-product-card></app-product-card>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <app-product-card></app-product-card>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <app-product-card></app-product-card>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <app-product-card></app-product-card>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <app-product-card></app-product-card>
-          </div>
-        </div>
+        <app-product-card-list [products]="featuredProducts"></app-product-card-list>
     </div>
 
   </div>
