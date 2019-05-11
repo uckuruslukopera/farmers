@@ -3,5 +3,5 @@
 </div> -->
 
 <div class="list-group list-group-flush">
-  <a *ngFor="let menuItem of menu" [routerLink]="['/category', menuItem.id]" routerLinkActive = "active" class="list-group-item">{{menuItem.name}}</a>
+  <a *ngFor="let menuItem of menu" [routerLink]="['/' + menuItem.url]" routerLinkActive = "active" class="list-group-item">{{menuItem.name}}</a>
 </div>

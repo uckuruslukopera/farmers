@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Media } from 'src/app/models/media.interface';
+import { Promotion } from 'src/app/models/promotion.interface';
 
 @Component({
   selector: 'app-carousel',
@@ -8,7 +8,7 @@ import { Media } from 'src/app/models/media.interface';
 })
 export class CarouselComponent implements OnInit {
 
-  @Input() media: Media[];
+  @Input() promotions: Promotion[];
 
   constructor() { }
 

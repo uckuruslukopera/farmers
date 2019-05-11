@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
-import { Category } from 'src/app/models/category.interface';
-import { CategoriesService } from 'src/app/services/categories.service';
 import * as fromRoot from './../../../state/reducers/index'
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/models/app-state.interface';
+import { MenuService } from 'src/app/services/menu.service';
+import { MenuItem } from 'src/app/models/menu-item.interface';
 
 @Component({
   selector: 'app-side-bar',
@@ -14,12 +14,12 @@ import { AppState } from 'src/app/models/app-state.interface';
 export class SideBarComponent implements OnInit {
   
   subscription: Subscription;
-  categories: Category[] = [];
+  menu: MenuItem[];
   title$: Observable<string>;
   showMenu$: Observable<boolean>;
 
   constructor(
-    private categoriesService: CategoriesService,
+    private menuService: MenuService,
     private store: Store<AppState>
   ) {
     this.title$ = store.select(fromRoot.getTitle);
@@ -27,9 +27,9 @@ export class SideBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.subscription = this.categoriesService.getCategories().subscribe(
-      (response: Category[]) => {
-        this.categories = [...response];
+    this.subscription = this.menuService.getMenu().subscribe(
+      (response: MenuItem[]) => {
+        this.menu = [...response];
       }, error => console.log(error)
     );
   }

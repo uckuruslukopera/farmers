@@ -1,12 +1,15 @@
 <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li *ngFor="let medium of media; let i = index" data-target="#carouselExampleIndicators"  [ngClass]="{'active' : i === 0}"></li>
+    <li *ngFor="let promotion of promotions; let i = index" data-target="#carouselExampleIndicators"  [ngClass]="{'active' : i === 0}"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <div *ngFor="let medium of media; let i = index" class="carousel-item" [ngClass]="{'active' : i === 0}">
-      <a href="" [routerLink]="medium.link">
-          <img class="d-block img-fluid" src="{{medium.image}}" alt="{{medium.name}}">
+    <div *ngFor="let promotion of promotions; let i = index" class="carousel-item" [ngClass]="{'active' : i === 0}">
+      <a *ngIf="promotion.url; else noLink" href="" [routerLink]="'/' + promotion.url">
+          <img class="d-block img-fluid" src="{{promotion.image}}" alt="{{promotion.name}}">
       </a>
+      <ng-template #noLink>
+          <img class="d-block img-fluid" src="{{promotion.image}}" alt="{{promotion.name}}">
+      </ng-template>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

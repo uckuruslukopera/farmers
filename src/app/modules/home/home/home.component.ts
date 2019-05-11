@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Media } from 'src/app/models/media.interface';
-import { CategoriesService } from 'src/app/services/categories.service';
 import { Product } from 'src/app/models/products.interface';
-import { environment } from '../../../../environments/environment';
 import { AppState } from 'src/app/models/app-state.interface';
 import { Store } from '@ngrx/store';
 import { SetSidebarAction } from 'src/app/state/actions/sidebar.action';
+import { Promotion } from 'src/app/models/promotion.interface';
+import { PromotionService } from 'src/app/services/promotion.service';
 
 @Component({
   selector: 'app-home',
@@ -14,39 +13,22 @@ import { SetSidebarAction } from 'src/app/state/actions/sidebar.action';
 })
 export class HomeComponent implements OnInit {
 
-  promotions: Media[] = [
-    {
-      image: 'http://lorempixel.com/900/350/food',
-      name: 'Meyve, Sebze',
-      link: '/category/1'
-    },
-    {
-      image: 'http://lorempixel.com/900/350/fashion',
-      name: 'İçecekler',
-      link: '/category/2'
-    },
-    {
-      image: 'http://lorempixel.com/900/350/people',
-      name: 'Atıştırmalıklar',
-      link: '/category/3'
-    }
-  ]
-
+  promotions: Promotion[];
   featuredProducts: Product[];
 
   constructor(
-    private categoriesService: CategoriesService,
+    private promotionService: PromotionService,
     private store: Store<AppState>
   ) { }
 
   ngOnInit() {
-    this.store.dispatch(new SetSidebarAction({title: 'Kategoriler', showMenu: true}))
-    this.categoriesService.getCategoryProducts(+environment.featuredCategory).subscribe(
-      (products: Product[]) => {
-        this.featuredProducts = [...products];
-      },
-      error => console.log(error)
-    );
+    this.store.dispatch(new SetSidebarAction({title: 'Kategoriler', showMenu: true}));
+
+    this.promotionService.getPromotions().subscribe(
+      (response: Promotion[]) => {
+        this.promotions = response;
+      }
+    )
   }
 
 }

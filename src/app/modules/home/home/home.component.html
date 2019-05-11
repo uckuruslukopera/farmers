@@ -1,2 +1,2 @@
-<app-carousel [media]="promotions"></app-carousel>
-<app-product-card-list [products]="featuredProducts"></app-product-card-list>
+<app-carousel *ngIf="promotions?.length" [promotions]="promotions"></app-carousel>
+<app-product-card-list *ngIf="featuredProducts?.length" [products]="featuredProducts"></app-product-card-list>
