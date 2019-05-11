@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-lg-3">
     <app-side-bar title="Sepetim" [withMenu]="false"></app-side-bar>
+    <a *ngIf="(cartItemsQty$ | async) > 0" href="javascrip:void(0)" routerLink="/home" class="btn btn-outline-success">Alışverişe Devam Et</a>
   </div>  
   <div class="col-lg-9">
     <div class="container">

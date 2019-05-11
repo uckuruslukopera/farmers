@@ -16,7 +16,6 @@ import { NumberStepperComponent } from './number-stepper/number-stepper.componen
     MenuComponent,
     ProductCardListComponent,    
     NumberStepperComponent
-    
   ],
   imports: [
     CommonModule,

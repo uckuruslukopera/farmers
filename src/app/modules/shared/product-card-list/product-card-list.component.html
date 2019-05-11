@@ -1,5 +1,6 @@
 <div class="row">
-  <div *ngFor="let product of products" class="col-lg-4 col-md-6 mb-4">
+  <div *ngFor="let product of products" class="col-lg-3 col-md-4 mb-4">
     <app-product-card [product]="product"></app-product-card>
   </div>
 </div>
+<!-- <app-pagination [count]="products.length" [pageSize]="1" [currentPage]="1"></app-pagination> -->

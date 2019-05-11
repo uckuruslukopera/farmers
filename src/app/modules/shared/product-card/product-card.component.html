@@ -1,13 +1,16 @@
 <div class="card h-100">
   <a href="javascript:void(0)"><img class="card-img-top" src="{{product?.image}}" alt="{{product?.name}}"></a>
   <div class="card-body">
-    <h4 class="card-title">
+    <div class="card-title">
       <span>{{product?.name}}</span>
-    </h4>
-    <h5>{{product?.price}} TL</h5>
+    </div>
+    <div class="card-text">
+      <span>{{product?.price}} TL</span>
+    </div>
+    
     <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p> -->
   </div>
-  <div class="card-footer text-right">
-    <button (click)="addToCart($event)" type="button" class="btn btn-warning">Ekle</button>
+  <div class="card-footer text-center">
+    <button (click)="addToCart($event)" type="button" class="btn btn-success">Sepete Ekle</button>
   </div>
 </div>
