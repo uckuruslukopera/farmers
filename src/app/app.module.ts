@@ -4,13 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './modules/core/core.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './state/reducers/index';
 
 import { ToastrModule } from 'ngx-toastr';
 import { EffectsModule } from '@ngrx/effects';
 import { CartEffect } from './state/effects/cart.effect';
+import { HttpMockRequestInterceptor } from './interceptor/http-mock-request.interceptor';
 
 
 @NgModule({
@@ -27,7 +28,13 @@ import { CartEffect } from './state/effects/cart.effect';
     ToastrModule.forRoot(),
     EffectsModule.forRoot([CartEffect])
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpMockRequestInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

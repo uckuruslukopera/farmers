@@ -23,7 +23,7 @@
           <td class="d-none d-md-table-cell">
             <figure class="media">
               <div class="img-wrap">
-                <img src="{{cartItem.product?.image}}" class="img-fluid img-sm"></div>
+                <img src="{{cartItem.product?.image}}" class="img-fluid img-sm" onError="this.src='../../../../assets/images/shop-placeholder.png';"></div>
               <figcaption class="media-body">
                 <h6 class="title text-truncate">{{cartItem.product?.name}}</h6>
               </figcaption>

@@ -5,10 +5,10 @@
   <div class="carousel-inner" role="listbox">
     <div *ngFor="let promotion of promotions; let i = index" class="carousel-item" [ngClass]="{'active' : i === 0}">
       <a *ngIf="promotion.url; else noLink" href="" [routerLink]="'/' + promotion.url">
-          <img class="d-block img-fluid" src="{{promotion.image}}" alt="{{promotion.name}}">
+          <img class="d-block img-fluid" src="{{promotion.image}}" alt="{{promotion.name}}" onError="this.src='../../../../assets/images/promotion-placeholder.jpeg';">
       </a>
       <ng-template #noLink>
-          <img class="d-block img-fluid" src="{{promotion.image}}" alt="{{promotion.name}}">
+          <img class="d-block img-fluid" src="{{promotion.image}}" alt="{{promotion.name}}" onError="this.src='../../../../assets/images/promotion-placeholder.jpeg';">
       </ng-template>
     </div>
   </div>
