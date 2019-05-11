@@ -5,7 +5,16 @@ import { Component } from '@angular/core';
   template: `
     <app-header></app-header>
     <div class="container">
-      <router-outlet></router-outlet>
+      <div class="row">
+        <div class="col-lg-2">
+          <app-side-bar></app-side-bar>
+        </div>  
+        <div class="col-lg-10">
+          <div class="container">
+              <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
     </div>
   `,
   styles: []

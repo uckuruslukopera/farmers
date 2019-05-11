@@ -1,10 +1,14 @@
 import * as fromCart from "./cart.reducer";
-import { State } from 'src/app/models/state.interface';
+import * as fromSidebar from "./sidebar.reducer";
+import { AppState } from 'src/app/models/app-state.interface';
 
 export const reducers = {
-    cart: fromCart.reducer
+    cart: fromCart.reducer,
+    sidebar: fromSidebar.reducer
 }
 
-export const getCartItemsQty = (state: State) => state.cart.itemsQty;
-export const getCartItems = (state: State) => state.cart.cartItems;
-export const getCartTotal = (state: State) => state.cart.total;
+export const getCartItemsQty = (state: AppState) => state.cart.itemsQty;
+export const getCartItems = (state: AppState) => state.cart.cartItems;
+export const getCartTotal = (state: AppState) => state.cart.total;
+export const getTitle = (state: AppState) => state.sidebar.title;
+export const getShowMenu = (state: AppState) => state.sidebar.showMenu;

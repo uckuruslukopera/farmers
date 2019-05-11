@@ -3,6 +3,9 @@ import { Media } from 'src/app/models/media.interface';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { Product } from 'src/app/models/products.interface';
 import { environment } from '../../../../environments/environment';
+import { AppState } from 'src/app/models/app-state.interface';
+import { Store } from '@ngrx/store';
+import { SetSidebarAction } from 'src/app/state/actions/sidebar.action';
 
 @Component({
   selector: 'app-home',
@@ -32,10 +35,12 @@ export class HomeComponent implements OnInit {
   featuredProducts: Product[];
 
   constructor(
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private store: Store<AppState>
   ) { }
 
   ngOnInit() {
+    this.store.dispatch(new SetSidebarAction({title: 'Kategoriler', showMenu: true}))
     this.categoriesService.getCategoryProducts(+environment.featuredCategory).subscribe(
       (products: Product[]) => {
         this.featuredProducts = [...products];

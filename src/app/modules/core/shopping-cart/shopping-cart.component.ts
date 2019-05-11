@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { State } from 'src/app/models/state.interface';
+import { AppState } from 'src/app/models/app-state.interface';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as fromRoot from './../../../state/reducers/index'
@@ -14,7 +14,7 @@ export class ShoppingCartComponent implements OnInit {
   cartItemsQty$: Observable<number>;
 
   constructor(
-    private store: Store<State>
+    private store: Store<AppState>
   ) {
     this.cartItemsQty$ = store.select(fromRoot.getCartItemsQty);
   }

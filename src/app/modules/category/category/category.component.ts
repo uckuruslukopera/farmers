@@ -4,6 +4,9 @@ import { Category } from 'src/app/models/category.interface';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/models/products.interface';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/models/app-state.interface';
+import { SetSidebarAction } from 'src/app/state/actions/sidebar.action';
 
 @Component({
   selector: 'app-category',
@@ -12,27 +15,21 @@ import { Product } from 'src/app/models/products.interface';
 })
 export class CategoryComponent implements OnInit {
 
-  category: Category;
   products: Product[];
   paramsSubscription: Subscription;
-  categorySubscription: Subscription;
   productsSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private store: Store<AppState>
   ) { }
 
   ngOnInit() {
     this.paramsSubscription = this.route.params.subscribe(response => {
       const id = +response['id'];
 
-      this.categoriesService.getCategory(id).subscribe(
-        (category: Category) => {
-          this.category = {...category};
-        },
-        error => console.log(error)
-      );
+      this.store.dispatch(new SetSidebarAction({title: 'Kategori Adı', showMenu: true}));
 
       this.categoriesService.getCategoryProducts(id).subscribe(
         (products: Product[]) => {

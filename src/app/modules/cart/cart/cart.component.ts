@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { State } from 'src/app/models/state.interface';
+import { AppState } from 'src/app/models/app-state.interface';
 import { Observable } from 'rxjs';
 import { CartItem } from 'src/app/models/cart-item.interface';
 import * as fromRoot from './../../../state/reducers/index'
 import { RemoveFromCartAction, EmptyCartAction, UpdateItemQtyAction } from 'src/app/state/actions/cart.action';
+import { SetSidebarAction } from 'src/app/state/actions/sidebar.action';
 
 @Component({
   selector: 'app-cart',
@@ -18,7 +19,7 @@ export class CartComponent implements OnInit {
   cartItemsQty$: Observable<number>;
 
   constructor(
-    private store: Store<State>
+    private store: Store<AppState>
   ) {
     this.cartItems$ = store.select(fromRoot.getCartItems);
     this.cartTotal$ = store.select(fromRoot.getCartTotal);
@@ -26,7 +27,7 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.store.dispatch(new SetSidebarAction({title: 'Sepetim'}));
   }
 
   removeFromCart(e, product) {
