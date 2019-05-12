@@ -32,7 +32,7 @@ export class CategoryComponent implements OnInit {
 
       this.categoryService.getCategory(id).subscribe(
         (category: Category) => {
-          this.store.dispatch(new SetSidebarAction({title: response.name, showMenu: true}));
+          this.store.dispatch(new SetSidebarAction({title: category.name, showMenu: true}));
         }, error => this.router.navigate(['/page-not-found'])
       );
 
