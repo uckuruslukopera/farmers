@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NumberStepperComponent } from './number-stepper.component';
 import { By } from '@angular/platform-browser';
@@ -7,14 +7,6 @@ import { DebugElement } from '@angular/core';
 describe('NumberStepperComponent', () => {
   let component: NumberStepperComponent;
   let fixture: ComponentFixture<NumberStepperComponent>;
-  let debugEl: DebugElement;
-
-  // beforeEach(async(() => {
-  //   TestBed.configureTestingModule({
-  //     declarations: [ NumberStepperComponent ]
-  //   })
-  //   .compileComponents();
-  // }));
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -22,7 +14,6 @@ describe('NumberStepperComponent', () => {
     });
     fixture = TestBed.createComponent(NumberStepperComponent);
     component = fixture.componentInstance;
-    debugEl  = fixture.debugElement.query(By.css('.number-stepper'));
     fixture.detectChanges();
   });
 
