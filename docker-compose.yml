@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+
+  farmers:
+    container_name: farmers
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - '4200:4200'
