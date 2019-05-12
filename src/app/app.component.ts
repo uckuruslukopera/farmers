@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       <div class="row">
         <div class="col-lg-2">
           <app-side-bar></app-side-bar>
-        </div>  
+        </div>
         <div class="col-lg-10">
           <div class="container">
               <router-outlet></router-outlet>
@@ -20,5 +20,5 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'Farmer\'s';
+  
 }
