@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from 'src/app/models/category.interface';
 import { Subscription, Observable } from 'rxjs';
 import { Product } from 'src/app/models/products.interface';
@@ -21,6 +21,7 @@ export class CategoryComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private categoryService: CategoryService,
     private store: Store<AppState>
   ) { }
@@ -30,10 +31,10 @@ export class CategoryComponent implements OnInit {
       const id = +response['id'];
 
       this.categoryService.getCategory(id).subscribe(
-        (response: Category) => {
-          this.store.dispatch(new SetSidebarAction({title: response.name, showMenu: true}))
-        }
-      )
+        (category: Category) => {
+          this.store.dispatch(new SetSidebarAction({title: response.name, showMenu: true}));
+        }, error => this.router.navigate(['/page-not-found'])
+      );
 
       this.categoryService.getCategoryProducts(id).subscribe(
         (products: Product[]) => {

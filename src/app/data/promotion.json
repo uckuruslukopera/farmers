@@ -3,70 +3,70 @@
       "id": "1",
       "createdAt": "2019-05-10T15:00:37.084Z",
       "name": "Baby",
-      "image": "http://lorempixel.com/900/350/technics",
+      "image": "http://lorempixel.com/900/350/technics/10",
       "url": "category/1"
     },
     {
       "id": "2",
       "createdAt": "2019-05-10T18:56:17.801Z",
       "name": "Garden",
-      "image": "http://lorempixel.com/900/350/city",
+      "image": "http://lorempixel.com/900/350/animals/10",
       "url": ""
     },
     {
       "id": "3",
       "createdAt": "2019-05-11T09:19:39.405Z",
       "name": "Games",
-      "image": "http://lorempixel.com/900/350/fashion",
+      "image": "http://lorempixel.com/900/350/fashion/6",
       "url": "category/2"
     },
     {
       "id": "4",
       "createdAt": "2019-05-10T22:55:49.319Z",
       "name": "Music",
-      "image": "http://lorempixel.com/900/350/transport",
+      "image": "http://lorempixel.com/900/350/transport/8",
       "url": ""
     },
     {
       "id": "5",
       "createdAt": "2019-05-11T09:37:28.592Z",
       "name": "Movies",
-      "image": "http://lorempixel.com/900/350/business",
+      "image": "http://lorempixel.com/900/350/business/7",
       "url": "category/3"
     },
     {
       "id": "6",
       "createdAt": "2019-05-11T02:40:19.363Z",
       "name": "Jewelery",
-      "image": "http://lorempixel.com/900/350/food",
+      "image": "http://lorempixel.com/900/350/food/7",
       "url": ""
     },
     {
       "id": "7",
       "createdAt": "2019-05-11T07:57:13.707Z",
       "name": "Automotive",
-      "image": "http://lorempixel.com/900/350/city",
+      "image": "http://lorempixel.com/900/350/fashion/10",
       "url": "category/4"
     },
     {
       "id": "8",
       "createdAt": "2019-05-10T21:28:55.212Z",
       "name": "Sports",
-      "image": "http://lorempixel.com/900/350/business",
+      "image": "http://lorempixel.com/900/350/business/6",
       "url": ""
     },
     {
       "id": "9",
       "createdAt": "2019-05-11T01:00:33.045Z",
       "name": "Baby",
-      "image": "http://lorempixel.com/900/350/fashion",
+      "image": "http://lorempixel.com/900/350/fashion/7",
       "url": "category/5"
     },
     {
       "id": "10",
       "createdAt": "2019-05-10T20:58:43.344Z",
       "name": "Kids",
-      "image": "http://lorempixel.com/900/350/cats",
+      "image": "http://lorempixel.com/900/350/sports/8",
       "url": "category/6"
     }
   ]
