@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/products.interface';
+import { Product } from 'src/app/models/product.interface';
 import { AppState } from 'src/app/models/app-state.interface';
 import { Store } from '@ngrx/store';
 import { SetSidebarAction } from 'src/app/state/actions/sidebar.action';

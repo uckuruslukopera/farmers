@@ -1,5 +1,5 @@
 import { CartItem } from './cart-item.interface';
-import { Product } from './products.interface';
+import { Product } from './product.interface';
 
 export class Cart{
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Product } from 'src/app/models/products.interface';
+import { Product } from 'src/app/models/product.interface';
 import { Store } from '@ngrx/store';
 import { AddToCartAction } from 'src/app/state/actions/cart.action';
 import { CartState } from 'src/app/models/cart-state.interface';

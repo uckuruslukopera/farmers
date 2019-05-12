@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from 'src/app/models/category.interface';
 import { Subscription, Observable } from 'rxjs';
-import { Product } from 'src/app/models/products.interface';
+import { Product } from 'src/app/models/product.interface';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/models/app-state.interface';
 import { SetSidebarAction } from 'src/app/state/actions/sidebar.action';

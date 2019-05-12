@@ -3,7 +3,7 @@ import { BaseService } from './base.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Category } from '../models/category.interface';
-import { Product } from '../models/products.interface';
+import { Product } from '../models/product.interface';
 
 @Injectable({
   providedIn: 'root'
