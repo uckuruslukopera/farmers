@@ -1,5 +1,5 @@
 <div class="number-stepper">
   <button (click)="decrement($event)" class="number-stepper--minus btn btn-warning" [ngClass]="{'disabled': value < 2}">-</button>
-  <input disabled type="text" value="{{value}}">
+  <input disabled type="text" class="number-stepper--input" value="{{value}}">
   <button (click)="increment($event)" class="number-stepper--plus btn btn-warning">+</button>
 </div>

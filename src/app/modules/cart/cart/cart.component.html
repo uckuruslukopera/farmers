@@ -18,7 +18,7 @@
           <td class="d-table-cell d-md-none">
             <h6 class="title text-truncate">{{cartItem.product?.name}}</h6>
             <app-number-stepper [value]="cartItem.qty"
-                                (onValueChanged)="updateItemQty($event, cartItem.product )"></app-number-stepper>
+                                (valueChanged)="updateItemQty($event, cartItem.product )"></app-number-stepper>
           </td>
           <td class="d-none d-md-table-cell">
             <figure class="media">
@@ -31,7 +31,7 @@
           </td>
           <td class="d-none d-md-table-cell">
             <app-number-stepper [value]="cartItem.qty"
-                                (onValueChanged)="updateItemQty($event, cartItem.product )"></app-number-stepper>
+                                (valueChanged)="updateItemQty($event, cartItem.product )"></app-number-stepper>
           </td>
           <td class="d-none d-md-table-cell">{{cartItem.product?.price | number:'1.2-2'}} TL</td>
           <td>{{cartItem.rowTotal  | number:'1.2-2'}} TL</td>

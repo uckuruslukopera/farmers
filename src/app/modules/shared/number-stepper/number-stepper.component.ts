@@ -9,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class NumberStepperComponent implements OnInit {
 
   @Input() value = 0;
-  @Output() onValueChanged: EventEmitter<number> = new EventEmitter();
+  @Output() valueChanged: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
 
@@ -19,18 +19,12 @@ export class NumberStepperComponent implements OnInit {
   decrement(e) {
     if(this.value > 1) {
       this.value -= 1;
-      this.onValueChanged.emit(this.value);
+      this.valueChanged.emit(this.value);
     }
   }
 
   increment(e) {
     this.value += 1;
-    this.onValueChanged.emit(this.value);
+    this.valueChanged.emit(this.value);
   }
-
-  update(e) {
-    this.value = e.value;
-    this.onValueChanged.emit(this.value);
-  }
-
 }
