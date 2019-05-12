@@ -1,6 +1,7 @@
-import { PromotionService } from './Promotion.service';
+import { PromotionService } from './promotion.service.js';
 import * as promotion from '../data/promotion.json';
 import { asyncData } from 'src/testing/async-observable-helpers';
+
 
 
 describe('PromotionService', () => {
