@@ -1,4 +1,3 @@
-import { TestBed } from '@angular/core/testing';
 import { CategoryService } from './category.service';
 import * as category from '../data/category.json';
 import * as product from '../data/product.json';

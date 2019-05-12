@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 
 export abstract class BaseService {
 
-    protected baseUrl: string;    
+    protected baseUrl: string;
 
-    constructor (
+    constructor(
         protected http: HttpClient
     ) {
-        this.baseUrl = environment.baseUrl
+        this.baseUrl = environment.baseUrl;
     }
 
     protected get<T>(endpoint: string): Observable<any> {
