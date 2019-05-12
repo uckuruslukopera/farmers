@@ -141,11 +141,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "testings2:serve"
+            "devServerTarget": "farmers:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "testings2:serve:production"
+              "devServerTarget": "farmers:serve:production"
             }
           }
         },
