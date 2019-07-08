@@ -5,15 +5,15 @@ import { PageNotFoundComponent } from './modules/core/page-not-found/page-not-fo
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: './modules/home/home.module#HomeModule'
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'category',
-    loadChildren: './modules/category/category.module#CategoryModule'
+    loadChildren: () => import('./modules/category/category.module').then(m => m.CategoryModule)
   },
   {
     path: 'cart',
-    loadChildren: './modules/cart/cart.module#CartModule'
+    loadChildren: () => import('./modules/cart/cart.module').then(m => m.CartModule)
   },
   {
     path: '',
